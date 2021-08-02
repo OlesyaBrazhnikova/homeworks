@@ -38,3 +38,34 @@ function getNameOfDay(lang, day) {
 }
 console.log(getNameOfDay('en', 5));
 console.log(getNameOfDay('ru', 5));
+
+/**TASK 4 hw2**/
+function minSumOfPair(arr) {
+	let min = Number.MAX_VALUE,
+		secondMin = Number.MAX_VALUE;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] < min) {
+			secondMin = min;
+			min = arr[i];
+		} else if ((arr[i] < secondMin) && arr[i] !== min) {
+			secondMin = arr[i];
+		}
+	}
+	return secondMin + min;
+}
+console.log((minSumOfPair([ 19, 5, 42, 2, 77 ])));
+
+/**TASK 5 hw2**/
+const binaryToDecimal = (arr) => {
+	let result = 0;
+    let bits = 1;
+    for(let i = 0; i < arr.length; i++) {
+        let currrentNum = +(arr[arr.length - i - 1]);
+        if(currrentNum === 1) {
+            result += bits;
+        }
+        bits *= 2;
+    }
+    return result;
+}
+console.log(binaryToDecimal([1,1,1,1]));
