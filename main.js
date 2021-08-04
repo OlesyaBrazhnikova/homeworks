@@ -1,6 +1,6 @@
 /** 1 **/
 function Employee(employee) {
-	Object.assign(this, employee);
+    Object.assign(this, employee);
 }
 const employeeObj = new Employee(employeeArr[0]);
 
@@ -39,29 +39,29 @@ const middleSalaryOfEmployee = getMiddleSalary(employeeConstructArr);
 
 /** 6 **/
 const getRandomEmployee = (arr) => {
-	 return arr[Math.floor(Math.random() * arr.length)];
+     return arr[Math.floor(Math.random() * arr.length)];
 }
 const randomElement = getRandomEmployee(employeeConstructArr);
 
 /** 7 **/
 class Emploee {
-	constructor() {
-		Object.assign(this, employeeArr[0]);
-	}
-	get fullInfo() {
-		const array = [];
-		for (let key in this) {
-			array.push(key + ' - ' + this[key])
-		}
-		return array.join(", ")
-	}
-	set fullInfo(value) {
-		for (let key in value) {
-			if (this.hasOwnProperty(key)) {
-				this[key] = value[key]
-			}
-		}
-	}
+    constructor() {
+        Object.assign(this, employeeArr[0]);
+    }
+    get fullInfo() {
+        const array = [];
+        for (let key in this) {
+            array.push(key + ' - ' + this[key])
+        }
+        return array.join(", ")
+    }
+    set fullInfo(value) {
+        for (let key in value) {
+            if (this.hasOwnProperty(key)) {
+                this[key] = value[key]
+            }
+        }
+    }
 }
 const employeeObject = new Emploee(employeeArr[0]);
 employeeObject.fullInfo = {name: 'Вася', salary: 9000, email: 'ex@mail.ua'}
