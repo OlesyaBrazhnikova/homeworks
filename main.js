@@ -17,7 +17,7 @@ class Validator {
     }
 
     checkIsPhone(phone) {
-		const pattern = /^\+38?\s.\d{3}.\s\d{3}.\d{2}.\d{2}$/;
+		const pattern = /^\+38?\s[^\w\d]\d{3}[^\w\d]\s\d{3}[^\w\d]\d{2}[^\w\d]\d{2}$/;
         return pattern.test(phone);
     }
 }
