@@ -48,3 +48,25 @@ let endTime,
     }
 }
 getTime();
+
+
+/**Task 4**/
+const timer = time => {
+	let result = setInterval(() => {
+	  let minutes = Math.round(time / 60);
+	  let seconds = time % 60;
+	  if (minutes < 10) {
+		minutes = '0' + minutes;
+	  }
+	  if (seconds < 10) {
+		seconds = '0' + seconds;
+	  }
+	  if (time === 0) {
+		clearInterval(result);
+		console.log('Time End');
+	  } else {
+		console.log(minutes + ':' + seconds);
+	  }
+	  time--;
+	}, 1000);
+};
