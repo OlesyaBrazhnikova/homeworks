@@ -70,3 +70,4 @@ const timer = time => {
         time--;
     }, 1000);
 };
+timer();
