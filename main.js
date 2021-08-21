@@ -12,3 +12,25 @@ const getCandidateById = id => {
     return getCandidate;
 }
 console.log(getCandidateById('5e216bc9a6059760578aefa4'));
+
+
+/**task 3 */
+const sortCandidatesArr = sortBy => {
+    condidateArr.forEach((item) => {
+        let itemBalance = +item.balance.replace('$','').replace(',','').split('.')[0];
+        item.balance = `${itemBalance}`;
+    });
+
+    if (sortBy === 'asc') {
+        return condidateArr.sort((a, b) => {
+            return a.balance - b.balance;
+        })
+    } else if (sortBy === 'desc') {
+        return condidateArr.sort((a, b) => {
+            return b.balance - a.balance;
+        })
+    } else {
+        return condidateArr;
+    }
+};
+console.log(sortCandidatesArr('asc'));
