@@ -34,3 +34,21 @@ const sortCandidatesArr = sortBy => {
     }
 };
 console.log(sortCandidatesArr('asc'));
+
+/**task 4 */
+const getEyeColorMap = () => {
+    let eyeColors = {};
+    condidateArr.map(item => {
+        if (eyeColors[item.eyeColor] === undefined) {
+            Object.defineProperty(eyeColors, item.eyeColor, {enumerable:true, value:[]});
+        } else {
+            for (let color in eyeColors) {
+                if (color === item.eyeColor) {
+                    eyeColors[color].push(item);
+                }
+            }
+        }
+    });
+    return eyeColors;
+}
+console.log(getEyeColorMap());
